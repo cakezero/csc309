@@ -18,7 +18,9 @@
         id INT AUTO_INCREMENT PRIMARY KEY,
         firstname VARCHAR(30) NOT NULL,
         lastname VARCHAR(30) NOT NULL,
-        email VARCHAR(50) NOT NULL UNIQUE
+        email VARCHAR(50) NOT NULL UNIQUE,
+        gender CHAR(1) NOT NULL,
+        date_of_birth DATE NOT NULL
     )';
 
     $result = $con->query($sql);
@@ -26,7 +28,7 @@
     if ($result === true) {
         echo 'Table created successfully';
     } else {
-        echo 'Error creating creating2: ' . $con->error;
+        echo 'Error creating Table: ' . $con->error;
     }
 
     // Close connection
